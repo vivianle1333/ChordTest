@@ -20,7 +20,7 @@ void SocketAndPort::specifyPortServer(){
 	current.sin_family = AF_INET;
 	current.sin_port = htons(portNoServer);
 	//current.sin_addr.s_addr = inet_addr("127.0.0.1");
-	current.sin_addr.s_addr = inet_addr("172.17.146.60");
+	current.sin_addr.s_addr = inet_addr("192.168.0.18");
 
 	if( bind(sock,(struct sockaddr *)&current,len) < 0){
 		perror("error");
@@ -64,7 +64,7 @@ bool SocketAndPort::portInUse(int portNo){
 	newCurr.sin_port = htons(portNo);
 	newCurr.sin_family = AF_INET;
 	//newCurr.sin_addr.s_addr = inet_addr("127.0.0.1");
-	newCurr.sin_addr.s_addr = inet_addr("172.17.146.60");
+	newCurr.sin_addr.s_addr = inet_addr("192.168.0.18");
 	
 	if( bind(newSock,(struct sockaddr *)&newCurr,len) < 0){
 		perror("error");
